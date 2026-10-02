@@ -2,286 +2,800 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0a0003">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#120105">
 <meta name="description" content="Titik Balik Festival — Dari Memori, Turun Ke Hati. 30 Januari 2027, Graha Cakrawala Malang.">
+<meta name="color-scheme" content="dark">
 <title>Titik Balik Festival — 30 Januari 2027</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Playfair+Display:ital,wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--gold:#d8b661;--gold2:#eed48d;--ink:#3a2200;--line:rgba(216,182,97,.18)}
+:root{
+  --bg:#100004;
+  --bg-deep:#070002;
+  --bg-card:#1b0508;
+  --burgundy:#350813;
+  --gold:#d7ae3f;
+  --gold-light:#f1d36d;
+  --gold-pale:#f5df9b;
+  --cream:#f5ede4;
+  --muted:#b9aaa5;
+  --muted-2:#8e7d7b;
+  --line:rgba(215,174,63,.38);
+  --line-soft:rgba(215,174,63,.18);
+  --radius:17px;
+  --content:430px;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:#040001;color:#f2e8da;font-family:'Lora',Georgia,serif;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;background:var(--bg-deep)}
+body{
+  min-height:100vh;
+  background:#050001;
+  color:var(--cream);
+  font-family:'Lora',Georgia,serif;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+button,a{font:inherit;color:inherit}
+a{text-decoration:none}
+button{border:0;background:none;cursor:pointer}
 img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.page{width:min(100%,430px);margin:0 auto;min-height:100vh;position:relative;overflow:hidden;overflow:clip;background:radial-gradient(60% 300px at 50% 320px,rgba(122,14,30,.32),transparent 70%),linear-gradient(180deg,#1c0209 0%,#14020a 30%,#0a0104 62%,#050001 100%);box-shadow:0 0 80px rgba(0,0,0,.8)}
-.curtain{position:absolute;top:0;left:0;right:0;height:280px;pointer-events:none;background:repeating-linear-gradient(90deg,rgba(0,0,0,.35) 0 24px,transparent 24px 34px,rgba(255,140,150,.1) 34px 60px,transparent 60px 74px),radial-gradient(130% 150% at 50% -45%,#9a1a30 0%,#6f0f22 42%,#38081a 68%,rgba(26,3,10,0) 97%);-webkit-mask-image:linear-gradient(#000 58%,transparent 100%);mask-image:linear-gradient(#000 58%,transparent 100%)}
-.curtain::after{content:"";position:absolute;inset:0;background:radial-gradient(46% 100% at 20% -14%,transparent 56%,rgba(0,0,0,.42) 62%,transparent 74%),radial-gradient(46% 100% at 52% -14%,transparent 56%,rgba(0,0,0,.42) 62%,transparent 74%),radial-gradient(46% 100% at 84% -14%,transparent 56%,rgba(0,0,0,.42) 62%,transparent 74%)}
-header{position:relative;z-index:40;display:flex;align-items:flex-start;justify-content:space-between;padding:16px 18px}
-.brand img{height:54px;width:auto}
-.brand-fallback{display:none;font-family:'Playfair Display',serif;font-weight:700;font-size:18px;color:var(--gold2)}
-.menu{display:grid;gap:5px;padding:12px 2px;z-index:2}
-.menu span{width:26px;height:2.5px;border-radius:2px;background:#f4ead9;transition:transform .25s ease,opacity .2s ease}
-.menu.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.page{
+  width:min(100%,var(--content));
+  min-height:100vh;
+  margin:0 auto;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(95% 520px at 50% 260px,rgba(91,7,23,.28),transparent 72%),
+    linear-gradient(180deg,#210208 0%,#170207 27%,#100105 59%,#070002 100%);
+  box-shadow:0 0 80px rgba(0,0,0,.72);
+}
+/* ===== HEADER ===== */
+.site-header{
+  position:relative;
+  z-index:50;
+  height:76px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  padding:13px 18px 8px;
+  border-bottom:1px solid rgba(215,174,63,.10);
+}
+.brand{display:block;width:68px;height:54px}
+.brand img{width:auto;height:54px;object-fit:contain}
+.brand-fallback{
+  display:none;
+  color:var(--gold-light);
+  font-family:'Playfair Display',serif;
+  font-size:17px;
+  line-height:.85;
+  font-weight:700;
+}
+.menu{
+  width:38px;
+  height:46px;
+  display:grid;
+  align-content:center;
+  justify-items:end;
+  gap:5px;
+  padding:8px 0;
+  z-index:3;
+}
+.menu span{width:30px;height:3px;border-radius:3px;background:#eee7df;transition:transform .25s ease,opacity .2s ease}
+.menu.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
 .menu.open span:nth-child(2){opacity:0}
-.menu.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
-.menu-panel{position:absolute;top:calc(100% - 6px);right:14px;min-width:225px;padding:10px;border-radius:16px;border:1px solid var(--line);background:rgba(22,3,9,.97);box-shadow:0 18px 44px rgba(0,0,0,.65);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s ease,transform .25s ease,visibility .25s}
+.menu.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.menu-panel{
+  position:absolute;
+  top:68px;
+  right:15px;
+  width:238px;
+  padding:9px;
+  border:1px solid var(--line-soft);
+  border-radius:15px;
+  background:rgba(19,2,7,.98);
+  box-shadow:0 18px 45px rgba(0,0,0,.7);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(-7px);
+  transition:opacity .22s ease,transform .22s ease,visibility .22s ease;
+}
 .menu-panel.open{opacity:1;visibility:visible;transform:none}
-.menu-panel a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border-radius:10px;font-family:'Playfair Display',serif;font-weight:500;font-size:15px;color:#f2e7d8;transition:background .2s ease,color .2s ease}
-.menu-panel a:hover{background:rgba(216,182,97,.09);color:var(--gold2)}
-.menu-panel a svg{color:var(--gold);flex:0 0 auto}
-.menu-panel .mp-cta{margin-top:6px;justify-content:center;background:linear-gradient(135deg,#eed288,#c9a04a);color:var(--ink);font-weight:700;letter-spacing:.5px}
-.menu-panel .mp-cta:hover{background:linear-gradient(135deg,#f6dd8e,#d3a94b);color:var(--ink)}
-.hero{position:relative;z-index:1;text-align:center;padding:22px 22px 100px}
-.presenter{font-size:12.5px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:#d9b56a}
-.hero-logo{width:min(320px,82%);height:auto;margin:90px auto 0;filter:drop-shadow(0 10px 26px rgba(0,0,0,.5))}
-.hero-fallback{display:none;font-family:'Playfair Display',serif;font-weight:700;font-size:64px;line-height:.9;color:var(--gold2);margin:90px auto 0}
-.tagline{margin-top:26px;font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#efe6da}
-.date{margin-top:30px;font-family:'Playfair Display',serif;font-weight:700;font-size:27px;color:var(--gold2)}
-.venue{margin-top:8px;font-size:17px;letter-spacing:2.5px;color:#e9dcd2}
-.countdown{display:flex;justify-content:space-between;width:100%;max-width:392px;margin:36px auto 0;padding:22px 26px 16px;border-radius:999px;border:1px solid rgba(216,182,97,.16);background:linear-gradient(180deg,rgba(122,16,35,.5),rgba(56,8,18,.6));box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 14px 30px rgba(0,0,0,.35)}
-.unit{min-width:60px;text-align:center}
-.unit strong{display:block;font-family:'Playfair Display',serif;font-weight:600;font-size:35px;line-height:1;color:var(--gold2);font-variant-numeric:tabular-nums}
-.unit span{display:block;margin-top:7px;font-size:10.5px;letter-spacing:2.2px;color:#c8a97e}
-.sep{display:flex;flex-direction:column;gap:7px;align-self:flex-start;margin-top:32px}
-.sep i{width:4px;height:4px;border-radius:50%;background:var(--gold)}
-.cta{display:inline-flex;align-items:center;gap:10px;margin-top:44px;padding:15px 32px;border-radius:999px;background:linear-gradient(180deg,#f6dd8e,#d3a94b 55%,#c2973c);color:var(--ink);font-family:'Playfair Display',serif;font-weight:700;font-size:16px;letter-spacing:1.4px;box-shadow:0 10px 30px rgba(0,0,0,.45),0 4px 16px rgba(216,182,97,.22);transition:transform .2s ease,box-shadow .2s ease}
-.cta:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.5),0 6px 20px rgba(216,182,97,.3)}
+.menu-panel a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 14px;
+  border-radius:10px;
+  color:#eee4d9;
+  font-family:'Playfair Display',serif;
+  font-size:14px;
+}
+.menu-panel a:hover{background:rgba(215,174,63,.08);color:var(--gold-pale)}
+.menu-panel .mp-cta{margin-top:6px;justify-content:center;background:linear-gradient(135deg,#f2d875,#c79b34);color:#301c00;font-weight:700}
+/* ===== CURTAIN / HERO ===== */
+.curtain{
+  position:absolute;
+  z-index:0;
+  top:0;left:0;right:0;
+  height:330px;
+  pointer-events:none;
+  overflow:hidden;
+  background:
+    radial-gradient(95% 125% at 50% -30%,rgba(190,35,61,.82) 0%,rgba(117,12,33,.95) 34%,rgba(53,5,21,.96) 65%,rgba(16,1,6,0) 96%);
+  -webkit-mask-image:linear-gradient(#000 58%,transparent 100%);
+  mask-image:linear-gradient(#000 58%,transparent 100%);
+}
+.curtain:before,
+.curtain:after{
+  content:"";
+  position:absolute;
+  left:-10%;right:-10%;
+  height:55px;
+  border-radius:50%;
+  border-top:4px solid rgba(196,38,67,.28);
+  box-shadow:0 -20px 28px rgba(220,50,76,.09),0 17px 28px rgba(0,0,0,.45);
+  transform:rotate(-2deg);
+}
+.curtain:before{top:42px}
+.curtain:after{top:126px;transform:rotate(1.2deg);border-top-width:5px}
+.hero{
+  position:relative;
+  z-index:1;
+  text-align:center;
+  padding:70px 20px 94px;
+}
+.presenter{
+  color:#d7b455;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.30em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.hero-logo{
+  width:min(300px,82%);
+  height:auto;
+  margin:86px auto 0;
+  filter:drop-shadow(0 10px 22px rgba(0,0,0,.45));
+}
+.hero-fallback{
+  display:none;
+  margin:86px auto 0;
+  color:var(--gold-pale);
+  font-family:'Playfair Display',serif;
+  font-weight:700;
+  font-size:63px;
+  line-height:.88;
+}
+.tagline{
+  margin-top:27px;
+  color:#eee4dc;
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:19px;
+}
+.date{
+  margin-top:30px;
+  color:var(--gold-light);
+  font-family:'Playfair Display',serif;
+  font-size:28px;
+  font-weight:700;
+  letter-spacing:.02em;
+}
+.venue{
+  margin-top:8px;
+  color:#e5d9d1;
+  font-size:16px;
+  letter-spacing:2.4px;
+}
+.countdown{
+  width:100%;
+  max-width:394px;
+  margin:36px auto 0;
+  padding:22px 22px 17px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  border:1px solid rgba(226,177,88,.34);
+  border-radius:999px;
+  background:linear-gradient(180deg,rgba(117,23,40,.58),rgba(59,7,17,.72));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 14px 30px rgba(0,0,0,.30);
+}
+.unit{min-width:61px;text-align:center}
+.unit strong{
+  display:block;
+  color:var(--gold-light);
+  font-family:'Playfair Display',serif;
+  font-size:34px;
+  line-height:1;
+  font-weight:600;
+  font-variant-numeric:tabular-nums;
+}
+.unit span{
+  display:block;
+  margin-top:7px;
+  color:#d1b997;
+  font-size:10px;
+  letter-spacing:2px;
+}
+.sep{display:flex;flex-direction:column;gap:7px;margin-top:31px}
+.sep i{width:4px;height:4px;border-radius:50%;background:#b98931}
+.cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  margin-top:43px;
+  min-width:275px;
+  padding:16px 30px;
+  border-radius:999px;
+  background:linear-gradient(100deg,#e2b62d 0%,#f7dd84 55%,#dfb83e 100%);
+  color:#321c00;
+  font-family:'Playfair Display',serif;
+  font-weight:700;
+  font-size:15px;
+  letter-spacing:1.2px;
+  box-shadow:0 10px 30px rgba(0,0,0,.40),0 4px 18px rgba(215,174,63,.20);
+  transition:transform .2s ease,filter .2s ease;
+}
+.cta:hover{transform:translateY(-2px);filter:brightness(1.04)}
 .cta:active{transform:translateY(0)}
-section{padding:54px 22px}
-.section-title{font-family:'Playfair Display',serif;font-weight:600;font-size:31px;text-align:center;color:var(--gold2)}
-.section-title.lined::after{content:"";display:block;width:165px;height:2px;margin:13px auto 0;border-radius:2px;background:linear-gradient(90deg,transparent,var(--gold) 22%,var(--gold) 78%,transparent)}
-.section-subtitle{max-width:335px;margin:16px auto 0;text-align:center;font-size:14.5px;line-height:1.75;color:#cbbaae}
-.guests{margin-top:36px;display:grid;gap:24px}
-.guest-card{position:relative;overflow:hidden;aspect-ratio:3/5;border-radius:16px;border:1px solid rgba(255,255,255,.06);background:#1c050a}
+/* ===== GENERIC SECTIONS ===== */
+section{padding:62px 20px}
+.section-title{
+  color:var(--gold-light);
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  font-size:30px;
+  line-height:1.15;
+  font-weight:600;
+}
+.section-title.lined:after{
+  content:"";
+  display:block;
+  width:84px;
+  height:4px;
+  margin:14px auto 0;
+  border-radius:999px;
+  background:linear-gradient(90deg,#c9972d,#f1d36d,#c9972d);
+}
+.section-subtitle{
+  max-width:348px;
+  margin:17px auto 0;
+  text-align:center;
+  color:#bcaeaa;
+  font-size:14px;
+  line-height:1.75;
+}
+/* ===== GUEST STARS ===== */
+#guest-stars{padding-top:60px}
+.guests{margin-top:38px;display:grid;gap:22px}
+.guest-card{
+  position:relative;
+  overflow:hidden;
+  margin:0;
+  aspect-ratio:3/5;
+  border:1px solid rgba(220,173,73,.16);
+  border-radius:15px;
+  background:#1a0508;
+}
 .guest-card img{width:100%;height:100%;object-fit:cover}
-.guest-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,1,4,.2),rgba(10,1,4,.06) 34%,rgba(8,0,3,.55) 66%,rgba(6,0,2,.93))}
-.guest-card figcaption{position:absolute;z-index:1;left:8px;right:8px;bottom:20px;text-align:center;font-family:'Playfair Display',serif;font-weight:600;font-size:19px;letter-spacing:1.5px;color:#fff}
-.links{margin-top:34px;display:grid;gap:14px}
-.link-card{display:flex;align-items:center;gap:13px;padding:15px 16px;border-radius:16px;border:1px solid var(--line);background:linear-gradient(135deg,rgba(66,18,25,.6),rgba(22,4,8,.9))}
-.link-icon{flex:0 0 42px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:var(--gold2);background:rgba(0,0,0,.35);border:1px solid rgba(216,182,97,.15)}
+.guest-card:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(8,0,3,.04) 20%,rgba(8,0,3,.18) 48%,rgba(7,0,3,.72) 76%,rgba(5,0,2,.94) 100%);
+}
+.guest-card figcaption{
+  position:absolute;
+  z-index:2;
+  left:12px;right:12px;bottom:24px;
+  text-align:center;
+  color:#fff;
+  font-family:'Playfair Display',serif;
+  font-size:18px;
+  line-height:1.2;
+  font-weight:700;
+  letter-spacing:1px;
+  text-shadow:0 2px 10px rgba(0,0,0,.55);
+}
+/* ===== OFFICIAL LINKS ===== */
+#tautan{padding-top:67px}
+.links{margin-top:35px;display:grid;gap:13px}
+.link-card{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  gap:13px;
+  padding:14px 15px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:linear-gradient(135deg,rgba(54,12,20,.58),rgba(20,3,8,.93));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.015);
+}
+.link-icon{
+  flex:0 0 43px;
+  width:43px;height:43px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  color:var(--gold-light);
+  background:rgba(55,20,4,.48);
+  border:1px solid rgba(215,174,63,.08);
+}
 .link-body{flex:1;min-width:0;display:grid;gap:3px}
-.link-body strong{font-family:'Playfair Display',serif;font-weight:600;font-size:16.5px;color:#f6ecdf}
-.link-body small{font-size:11.5px;color:#9c8a89}
-.chev{display:grid;place-items:center;color:var(--gold)}
-.mail-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}
-.pill{display:inline-flex;align-items:center;padding:7px 14px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.3px}
-.pill.solid{background:linear-gradient(135deg,#eed288,#c9a04a);color:var(--ink)}
-.pill.line{border:1px solid rgba(216,182,97,.45);color:var(--gold2)}
-.chip{justify-self:start;padding:7px 13px;border-radius:999px;border:1px solid rgba(216,182,97,.4);background:rgba(216,182,97,.07);color:var(--gold2);font-size:10.5px;letter-spacing:.4px}
-.address{margin-top:20px;text-align:center;font-family:'Playfair Display',serif;font-weight:600;font-size:16px;letter-spacing:2.5px;line-height:1.9;color:#f2e7d8}
-.street{max-width:310px;margin:9px auto 0;text-align:center;font-size:13px;line-height:1.7;color:#b3a099}
-.map-wrap{position:relative;margin-top:22px;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
-.map-wrap iframe{display:block;width:100%;aspect-ratio:7/8;border:0}
-.map-open{position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:8px;background:#fff;color:#1a1a1a;font-family:Arial,sans-serif;font-size:12px;font-weight:700;box-shadow:0 3px 10px rgba(0,0,0,.35)}
-footer{padding:46px 22px 118px;text-align:center}
-.f-logo{width:108px;margin:0 auto 14px}
-footer p{font-size:11px;line-height:1.9;color:#8d7d7a}
-.ticket-bar{position:fixed;z-index:60;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,430px);display:flex;align-items:center;justify-content:center;gap:10px;padding:13px 16px;padding-bottom:calc(13px + env(safe-area-inset-bottom));background:rgba(8,1,3,.93);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-top:1px solid rgba(216,182,97,.16)}
-.tb-label{font-family:Arial,sans-serif;font-size:9px;letter-spacing:2.4px;color:#c9b183}
-.tb-brand{display:inline-flex;align-items:center;gap:6px;font-family:'Segoe UI',Arial,sans-serif;font-weight:800;font-size:16px;color:#fff}
-.to-top{position:fixed;z-index:59;right:max(14px,calc(50% - 201px));bottom:74px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:var(--ink);background:linear-gradient(135deg,#f2d98e,#c49b3e);box-shadow:0 8px 22px rgba(0,0,0,.45),0 3px 12px rgba(216,182,97,.25)}
-@media(max-width:359px){.countdown{padding:18px 14px 12px}.unit{min-width:46px}.unit strong{font-size:29px}.sep{margin-top:27px}}
-@media(min-width:700px){body{padding:24px 0}.page{border-radius:22px}}
+.link-body strong{
+  color:#f6ede4;
+  font-family:'Playfair Display',serif;
+  font-size:16px;
+  line-height:1.2;
+  font-weight:600;
+}
+.link-body small{color:#a89894;font-size:11px;line-height:1.35}
+.chev{display:grid;place-items:center;color:var(--gold-light);flex:0 0 auto}
+.mail-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:25px;
+  padding:5px 12px;
+  border-radius:999px;
+  font-family:Arial,sans-serif;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.25px;
+}
+.pill.solid{background:linear-gradient(135deg,#f0d16a,#c99e3b);color:#311d00}
+.pill.line{border:1px solid rgba(215,174,63,.48);color:var(--gold-pale)}
+.chip{
+  flex:0 0 auto;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(215,174,63,.36);
+  background:rgba(215,174,63,.05);
+  color:#d6b95f;
+  font-size:9px;
+  white-space:nowrap;
+}
+/* ===== TICKETS ===== */
+#tiket{padding-top:63px;padding-bottom:66px}
+#tiket .section-subtitle{max-width:360px;margin-top:20px;font-size:17px;line-height:1.72}
+.ticket-grid{margin-top:40px;display:grid;gap:30px}
+.ticket-card{
+  padding:32px 30px 34px;
+  border:1px solid rgba(215,174,63,.30);
+  border-radius:18px;
+  background:linear-gradient(160deg,rgba(52,9,17,.85),rgba(20,2,7,.96));
+  box-shadow:0 18px 40px rgba(0,0,0,.35);
+}
+.ticket-card h3{
+  color:#e5b83c;
+  font-family:'Playfair Display',serif;
+  font-size:32px;
+  line-height:1.18;
+  font-weight:700;
+}
+.ticket-card p{
+  margin-top:16px;
+  color:#a89d9f;
+  font-size:16px;
+  line-height:1.62;
+}
+.ticket-card ul{
+  list-style:none;
+  margin:26px 0 34px;
+  padding:0;
+  display:grid;
+  gap:10px;
+}
+.ticket-card li{
+  position:relative;
+  padding-left:30px;
+  color:#efe6df;
+  font-size:16px;
+  line-height:1.45;
+}
+.ticket-card li::before{
+  content:"";
+  position:absolute;
+  left:3px;
+  top:.48em;
+  width:9px;height:9px;
+  border-radius:50%;
+  background:#d7ae3f;
+}
+.ticket-card .ticket-cta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  width:100%;
+  min-height:56px;
+  padding:15px 18px;
+  border-radius:999px;
+  background:linear-gradient(180deg,#f3d674 0%,#e3bf4a 55%,#d2a232 100%);
+  color:#33200a;
+  font-family:'Playfair Display',serif;
+  font-size:14.5px;
+  font-weight:700;
+  letter-spacing:1.6px;
+  box-shadow:0 10px 26px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.42);
+  transition:transform .2s ease,filter .2s ease;
+}
+.ticket-card .ticket-cta:hover{transform:translateY(-2px);filter:brightness(1.04)}
+.ticket-card .ticket-cta:active{transform:translateY(0)}
+/* ===== LOCATION ===== */
+#lokasi{padding-top:63px;padding-bottom:64px}
+.address{
+  margin-top:20px;
+  text-align:center;
+  color:#f1e6dd;
+  font-family:'Playfair Display',serif;
+  font-size:15px;
+  line-height:1.65;
+  font-weight:700;
+  letter-spacing:2px;
+}
+.street{
+  max-width:330px;
+  margin:8px auto 0;
+  text-align:center;
+  color:#aaa09c;
+  font-size:11.5px;
+  line-height:1.65;
+}
+.map-wrap{
+  position:relative;
+  margin-top:23px;
+  overflow:hidden;
+  border:1px solid rgba(215,174,63,.22);
+  border-radius:10px;
+  background:#ddd;
+}
+.map-wrap iframe{display:block;width:100%;height:305px;border:0}
+/* ===== FOOTER ===== */
+footer{
+  padding:48px 20px 34px;
+  text-align:center;
+  background:#040001;
+  border-top:1px solid rgba(215,174,63,.12);
+}
+.f-logo{width:72px;height:auto;margin:0 auto 15px;opacity:.88}
+footer p{color:#807475;font-size:9px;line-height:1.85}
+.f-partner{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin-top:26px;
+}
+.f-partner .fp-label{
+  font-family:Arial,sans-serif;
+  font-size:9.5px;
+  font-weight:700;
+  letter-spacing:2px;
+  color:#877b80;
+}
+.f-partner .fp-brand{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-family:Arial,sans-serif;
+  font-size:19px;
+  font-weight:700;
+  letter-spacing:.4px;
+  color:#9d9399;
+}
+/* Back to top */
+.to-top{
+  position:fixed;
+  z-index:60;
+  right:max(14px,calc(50% - 201px));
+  bottom:22px;
+  width:43px;height:43px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  color:#3a2200;
+  background:linear-gradient(135deg,#f5dc87,#c49a39);
+  box-shadow:0 8px 22px rgba(0,0,0,.48),0 3px 12px rgba(215,174,63,.24);
+  transition:transform .2s ease,opacity .2s ease;
+}
+.to-top:hover{transform:translateY(-2px)}
+.to-top.hidden{opacity:0;pointer-events:none;transform:scale(.85)}
+@media(max-width:359px){
+  .hero{padding-left:15px;padding-right:15px}
+  .countdown{padding-left:12px;padding-right:12px}
+  .unit{min-width:47px}
+  .unit strong{font-size:29px}
+  .sep{margin-top:27px}
+  .cta{min-width:245px}
+  section{padding-left:16px;padding-right:16px}
+  .ticket-card{padding:28px 22px 30px}
+}
+@media(min-width:700px){
+  body{padding:24px 0}
+  .page{border-radius:22px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
 </style>
 </head>
 <body>
 <h1 class="sr-only">Titik Balik Festival — 30 Januari 2027, Graha Cakrawala Universitas Negeri Malang</h1>
-<main class="page">
-<div class="curtain" aria-hidden="true"></div>
-<header>
-<div class="brand">
-<img src="logo.png" alt="Titik Balik" width="64" height="54" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-<span class="brand-fallback">Titik Balik</span>
-</div>
-<button class="menu" type="button" id="menuBtn" aria-label="Buka menu" aria-controls="menuPanel" aria-expanded="false"><span></span><span></span><span></span></button>
-<nav class="menu-panel" id="menuPanel" aria-label="Navigasi utama">
-<a href="#beranda">Beranda</a>
-<a href="#guest-stars">Guest Stars</a>
-<a href="#tautan">Tautan Resmi</a>
-<a href="#lokasi">Lokasi</a>
-<a class="mp-cta" href="https://artatixmyid.github.io/titikbalikfest/" target="_blank" rel="noopener">BELI TIKET DISINI</a>
-</nav>
-</header>
-<section class="hero" id="beranda">
-<p class="presenter">JC Entertainment x Luxar Creative</p>
-<img class="hero-logo" src="logo.png" alt="Titik Balik" width="320" height="240" fetchpriority="high" onerror="this.style.display='none';document.getElementById('heroFallback').style.display='block'">
-<div class="hero-fallback" id="heroFallback">TITIK<br>BALIK</div>
-<p class="tagline">Dari Memori, Turun Ke Hati</p>
-<p class="date">30 JANUARI 2027</p>
-<p class="venue">GRAHA CAKRAWALA | MALANG</p>
-<div class="countdown" role="timer" aria-label="Hitung mundur menuju acara">
-<div class="unit"><strong id="cd-d">000</strong><span>HARI</span></div>
-<span class="sep" aria-hidden="true"><i></i><i></i></span>
-<div class="unit"><strong id="cd-h">00</strong><span>JAM</span></div>
-<span class="sep" aria-hidden="true"><i></i><i></i></span>
-<div class="unit"><strong id="cd-m">00</strong><span>MENIT</span></div>
-<span class="sep" aria-hidden="true"><i></i><i></i></span>
-<div class="unit"><strong id="cd-s">00</strong><span>DETIK</span></div>
-</div>
-<a class="cta" href="https://artatixmyid.github.io/titikbalikfest/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 20.5 20h-17z"/><path d="M8.5 14.5h7"/></svg>BELI TIKET DISINI</a>
-</section>
-<section id="guest-stars">
-<h2 class="section-title lined">Guest Stars</h2>
-<p class="section-subtitle">Hadirkan setlist nostalgia era early 2000s, panggung selebrasi jiwa-jiwa yang berhasil bangkit.</p>
-<div class="guests">
-<figure class="guest-card">
-<img src="reza-artamivia.jpg" alt="Reza Artamevia" loading="lazy" decoding="async">
-<figcaption>REZA ARTAMEVIA</figcaption>
-</figure>
-<figure class="guest-card">
-<img src="kahitna.jpg" alt="Kahitna" loading="lazy" decoding="async">
-<figcaption>KAHITNA</figcaption>
-</figure>
-<figure class="guest-card">
-<img src="astrid.jpg" alt="Astrid" loading="lazy" decoding="async">
-<figcaption>ASTRID</figcaption>
-</figure>
-<figure class="guest-card">
-<img src="element.jpg" alt="Element" loading="lazy" decoding="async">
-<figcaption>ELEMENT</figcaption>
-</figure>
-</div>
-</section>
-<section id="tautan">
-<h2 class="section-title lined">Tautan Resmi</h2>
-<p class="section-subtitle">Ikuti informasi terbaru, daftar menjadi bagian dari acara, atau sapa kami melalui kanal resmi Titik Balik Festival.</p>
-<div class="links">
-<a class="link-card" href="https://www.instagram.com/titikbalikfest" target="_blank" rel="noopener">
-<span class="link-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></span>
-<span class="link-body"><strong>Instagram</strong><small>@titikbalikfest</small></span>
-<span class="chev"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></span>
-</a>
-<a class="link-card" href="https://www.tiktok.com/@titikbalikfest" target="_blank" rel="noopener">
-<span class="link-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span>
-<span class="link-body"><strong>TikTok</strong><small>@titikbalikfest</small></span>
-<span class="chev"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></span>
-</a>
-<div class="link-card">
-<span class="link-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3.5"/><path d="m4.5 7.5 7.5 5.5 7.5-5.5"/></svg></span>
-<div class="link-body">
-<strong>Email Official</strong>
-<small>Kerjasama &amp; Sponsorship</small>
-<div class="mail-actions">
-<a class="pill solid" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=halo@titikbalik.id" target="_blank" rel="noopener">Buka Gmail</a>
-<button class="pill line" type="button" id="copyEmail">Salin Email</button>
-</div>
-</div>
-</div>
-<a class="link-card" href="#">
-<span class="link-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></span>
-<span class="link-body"><strong>Playlist Spotify</strong><small>Dengarkan setlist nostalgia kami</small></span>
-<span class="chev"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></span>
-</a>
-<div class="link-card">
-<span class="link-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5 12 4l7.5 6.5"/><path d="M6.5 9.5V20h11V9.5"/></svg></span>
-<span class="link-body"><strong>Pendaftaran Tenant</strong><small>Untuk F&amp;B dan Merchandise</small></span>
-<span class="chip">Segera Hadir</span>
-</div>
-<div class="link-card">
-<span class="link-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="9.5" cy="9" r="3.2"/><path d="M3.8 19c.8-2.8 3.1-4.3 5.7-4.3s4.9 1.5 5.7 4.3"/><circle cx="17" cy="10" r="2.5"/><path d="M16.2 15.1c2.1.2 3.7 1.5 4.4 3.4"/></svg></span>
-<span class="link-body"><strong>Pendaftaran Volunteer</strong><small>Jadilah bagian dari cerita</small></span>
-<span class="chip">Segera Hadir</span>
-</div>
-</div>
-</section>
-<section id="lokasi">
-<h2 class="section-title">Lokasi</h2>
-<p class="address">GRAHA CAKRAWALA<br>UNIVERSITAS NEGERI MALANG</p>
-<p class="street">Jl. Semarang No.5, Sumbersari, Kec. Lowokwaru, Kota Malang, Jawa Timur</p>
-<div class="map-wrap">
-<iframe title="Peta Graha Cakrawala Universitas Negeri Malang" src="https://www.google.com/maps?q=Graha+Cakrawala+Universitas+Negeri+Malang&amp;output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
-<a class="map-open" href="https://www.google.com/maps/search/?api=1&amp;query=Graha+Cakrawala+Universitas+Negeri+Malang" target="_blank" rel="noopener">Buka di Maps <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M19 13.5V20H4V5h6.5"/></svg></a>
-</div>
-</section>
-<footer>
-<img class="f-logo" src="logo.png" alt="Titik Balik" loading="lazy" onerror="this.style.display='none'">
-<p>© 2027 Titik Balik Festival. All rights reserved.</p>
-<p>Diselenggarakan oleh JC Entertainment x Luxar Creative</p>
-</footer>
+
+<main class="page" id="top">
+  <div class="curtain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#beranda" aria-label="Titik Balik — Beranda">
+      <img src="logo.png" alt="Titik Balik" width="68" height="54" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="brand-fallback">Titik<br>Balik</span>
+    </a>
+    <button class="menu" type="button" id="menuBtn" aria-label="Buka menu" aria-controls="menuPanel" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu-panel" id="menuPanel" aria-label="Navigasi utama">
+      <a href="#beranda">Beranda</a>
+      <a href="#guest-stars">Guest Stars</a>
+      <a href="#tautan">Tautan Resmi</a>
+      <a href="#tiket">Kategori Tiket</a>
+      <a href="#lokasi">Lokasi</a>
+      <a class="mp-cta" href="https://artatixmyid.github.io/titikbalikfest/" target="_blank" rel="noopener">BELI TIKET DISINI</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="beranda">
+    <p class="presenter">JC ENTERTAINMENT X LUXAR CREATIVE</p>
+    <img class="hero-logo" src="logo.png" alt="Titik Balik" width="300" height="240" fetchpriority="high" onerror="this.style.display='none';document.getElementById('heroFallback').style.display='block'">
+    <div class="hero-fallback" id="heroFallback">TITIK<br>BALIK</div>
+    <p class="tagline">Dari Memori, Turun Ke Hati</p>
+    <p class="date">30 JANUARI 2027</p>
+    <p class="venue">GRAHA CAKRAWALA | MALANG</p>
+
+    <div class="countdown" role="timer" aria-label="Hitung mundur menuju acara">
+      <div class="unit"><strong id="cd-d">000</strong><span>HARI</span></div>
+      <span class="sep" aria-hidden="true"><i></i><i></i></span>
+      <div class="unit"><strong id="cd-h">00</strong><span>JAM</span></div>
+      <span class="sep" aria-hidden="true"><i></i><i></i></span>
+      <div class="unit"><strong id="cd-m">00</strong><span>MENIT</span></div>
+      <span class="sep" aria-hidden="true"><i></i><i></i></span>
+      <div class="unit"><strong id="cd-s">00</strong><span>DETIK</span></div>
+    </div>
+
+    <a class="cta" href="https://artatixmyid.github.io/titikbalikfest/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.95 5.6c.5-1.05 1.6-1.05 2.1 0l6.1 12.3c.5 1.05-.15 2.1-1.05 2.1H5.9c-.9 0-1.55-1.05-1.05-2.1l6.1-12.3Z"/><path d="M7 15.7h10"/></svg>
+      BELI TIKET DISINI
+    </a>
+  </section>
+
+  <section id="guest-stars">
+    <h2 class="section-title lined">Guest Stars</h2>
+    <p class="section-subtitle">Hadirkan setlist nostalgia era early 2000s, panggung selebrasi jiwa-jiwa yang berhasil bangkit.</p>
+    <div class="guests">
+      <figure class="guest-card">
+        <img src="reza-artamivia.jpg" data-fallback="reza-artamevia.jpg" alt="Reza Artamevia" loading="lazy" decoding="async">
+        <figcaption>REZA ARTAMEVIA</figcaption>
+      </figure>
+      <figure class="guest-card">
+        <img src="kahitna.jpg" alt="Kahitna" loading="lazy" decoding="async">
+        <figcaption>KAHITNA</figcaption>
+      </figure>
+      <figure class="guest-card">
+        <img src="astrid.jpg" alt="Astrid" loading="lazy" decoding="async">
+        <figcaption>ASTRID</figcaption>
+      </figure>
+      <figure class="guest-card">
+        <img src="element.jpg" alt="Element" loading="lazy" decoding="async">
+        <figcaption>ELEMENT</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="tautan">
+    <h2 class="section-title lined">Tautan Resmi</h2>
+    <p class="section-subtitle">Ikuti informasi terbaru, daftar menjadi bagian dari acara, atau sapa kami melalui kanal resmi Titik Balik Festival.</p>
+    <div class="links">
+      <a class="link-card" href="https://www.instagram.com/titikbalikfest" target="_blank" rel="noopener">
+        <span class="link-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></span>
+        <span class="link-body"><strong>Instagram</strong><small>@titikbalikfest</small></span>
+        <span class="chev"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></span>
+      </a>
+
+      <a class="link-card" href="https://www.tiktok.com/@titikbalikfest" target="_blank" rel="noopener">
+        <span class="link-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span>
+        <span class="link-body"><strong>TikTok</strong><small>@titikbalikfest</small></span>
+        <span class="chev"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></span>
+      </a>
+
+      <div class="link-card">
+        <span class="link-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3.5"/><path d="m4.5 7.5 7.5 5.5 7.5-5.5"/></svg></span>
+        <div class="link-body">
+          <strong>Email Official</strong>
+          <small>Kerjasama &amp; Sponsorship</small>
+          <div class="mail-actions">
+            <a class="pill solid" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=halo@titikbalik.id" target="_blank" rel="noopener">Buka Gmail</a>
+            <button class="pill line" type="button" id="copyEmail">Salin Email</button>
+          </div>
+        </div>
+      </div>
+
+      <a class="link-card" href="#" aria-label="Playlist Spotify">
+        <span class="link-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></span>
+        <span class="link-body"><strong>Playlist Spotify</strong><small>Dengarkan setlist nostalgia kami</small></span>
+        <span class="chev"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></span>
+      </a>
+
+      <div class="link-card">
+        <span class="link-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5 12 4l7.5 6.5"/><path d="M6.5 9.5V20h11V9.5"/></svg></span>
+        <span class="link-body"><strong>Pendaftaran Tenant</strong><small>Untuk F&amp;B dan Merchandise</small></span>
+        <span class="chip">Segera Hadir</span>
+      </div>
+
+      <div class="link-card">
+        <span class="link-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="9.5" cy="9" r="3.2"/><path d="M3.8 19c.8-2.8 3.1-4.3 5.7-4.3s4.9 1.5 5.7 4.3"/><circle cx="17" cy="10" r="2.5"/><path d="M16.2 15.1c2.1.2 3.7 1.5 4.4 3.4"/></svg></span>
+        <span class="link-body"><strong>Pendaftaran Volunteer</strong><small>Jadilah bagian dari cerita</small></span>
+        <span class="chip">Segera Hadir</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="tiket">
+    <h2 class="section-title lined">Kategori Tiket</h2>
+    <p class="section-subtitle">Pilih kategori tiketmu dan jadilah bagian dari perjalanan jiwa-jiwa yang berhasil bangkit.</p>
+    <div class="ticket-grid">
+      <article class="ticket-card">
+        <h3>VIP Standing &amp;<br>Festival Tribun</h3>
+        <p>Nikmati konser dengan energi maksimal di area festival dan tribun untuk bernyanyi bersama.</p>
+        <ul>
+          <li>Akses area VIP Standing</li>
+          <li>Akses area Festival Tribun</li>
+          <li>Spot strategis menikmati visual panggung</li>
+        </ul>
+        <a class="ticket-cta" href="https://artatixmyid.github.io/titikbalikfest/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.95 5.6c.5-1.05 1.6-1.05 2.1 0l6.1 12.3c.5 1.05-.15 2.1-1.05 2.1H5.9c-.9 0-1.55-1.05-1.05-2.1l6.1-12.3Z"/><path d="M7 15.7h10"/></svg>
+          BELI TIKET
+        </a>
+      </article>
+
+      <article class="ticket-card">
+        <h3>VVIP Seating</h3>
+        <p>Kenyamanan premium dengan kursi eksklusif dan pandangan terbaik langsung ke panggung utama.</p>
+        <ul>
+          <li>Kursi VVIP eksklusif</li>
+          <li>Jalur masuk prioritas</li>
+          <li>Kenyamanan maksimal</li>
+          <li>Merchandise VVIP eksklusif</li>
+          <li>VVIP Lounge eksklusif</li>
+        </ul>
+        <a class="ticket-cta" href="https://artatixmyid.github.io/titikbalikfest/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.95 5.6c.5-1.05 1.6-1.05 2.1 0l6.1 12.3c.5 1.05-.15 2.1-1.05 2.1H5.9c-.9 0-1.55-1.05-1.05-2.1l6.1-12.3Z"/><path d="M7 15.7h10"/></svg>
+          BELI TIKET
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <section id="lokasi">
+    <h2 class="section-title">Lokasi</h2>
+    <p class="address">GRAHA CAKRAWALA<br>UNIVERSITAS NEGERI MALANG</p>
+    <p class="street">Jl. Semarang No.5, Sumbersari, Kec. Lowokwaru, Kota Malang, Jawa Timur</p>
+    <div class="map-wrap">
+      <iframe title="Peta Graha Cakrawala Universitas Negeri Malang" src="https://www.google.com/maps?q=Graha+Cakrawala+Universitas+Negeri+Malang&amp;output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <img class="f-logo" src="logo.png" alt="Titik Balik" loading="lazy" onerror="this.style.display='none'">
+    <p>© 2027 Titik Balik Festival. All rights reserved.</p>
+    <p>Diselenggarakan oleh JC Entertainment x Luxar Creative</p>
+    <a class="f-partner" href="https://artatixmyid.github.io/titikbalikfest/" target="_blank" rel="noopener" aria-label="Tiket tersedia di Artatix">
+      <span class="fp-label">TICKET AVAILABLE AT</span>
+      <span class="fp-brand"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.95 5.6c.5-1.05 1.6-1.05 2.1 0l6.1 12.3c.5 1.05-.15 2.1-1.05 2.1H5.9c-.9 0-1.55-1.05-1.05-2.1l6.1-12.3Z"/><path d="M7 15.7h10"/></svg>Artatix</span>
+    </a>
+  </footer>
 </main>
-<a class="ticket-bar" href="https://artatixmyid.github.io/titikbalikfest/" target="_blank" rel="noopener">
-<span class="tb-label">TICKET AVAILABLE AT</span>
-<span class="tb-brand"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 20.5 20h-17z"/><path d="M8.5 14.5h7"/></svg>Artatix</span>
-</a>
-<button class="to-top" type="button" id="toTop" aria-label="Kembali ke atas"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5.5 14.5 6.5-6.5 6.5 6.5"/></svg></button>
+
+<button class="to-top hidden" type="button" id="toTop" aria-label="Kembali ke atas">
+  <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5.5 14.5 6.5-6.5 6.5 6.5"/></svg>
+</button>
+
 <script>
-const T = new Date("2027-01-30T19:00:00+07:00").getTime();
+'use strict';
+
+/* Countdown: 30 Januari 2027, 19:00 WIB */
+const EVENT_TIME = new Date('2027-01-30T19:00:00+07:00').getTime();
 const cd = {
-  d: document.getElementById("cd-d"),
-  h: document.getElementById("cd-h"),
-  m: document.getElementById("cd-m"),
-  s: document.getElementById("cd-s")
+  d: document.getElementById('cd-d'),
+  h: document.getElementById('cd-h'),
+  m: document.getElementById('cd-m'),
+  s: document.getElementById('cd-s')
 };
-function tick() {
-  let x = Math.max(0, T - Date.now());
-  const d = Math.floor(x / 864e5); x %= 864e5;
-  const h = Math.floor(x / 36e5); x %= 36e5;
-  const m = Math.floor(x / 6e4);
-  const s = Math.floor(x % 6e4 / 1e3);
-  cd.d.textContent = String(d).padStart(3, "0");
-  cd.h.textContent = String(h).padStart(2, "0");
-  cd.m.textContent = String(m).padStart(2, "0");
-  cd.s.textContent = String(s).padStart(2, "0");
+function tick(){
+  let remaining = Math.max(0, EVENT_TIME - Date.now());
+  const d = Math.floor(remaining / 864e5); remaining %= 864e5;
+  const h = Math.floor(remaining / 36e5); remaining %= 36e5;
+  const m = Math.floor(remaining / 6e4); remaining %= 6e4;
+  const s = Math.floor(remaining / 1e3);
+  cd.d.textContent = String(d).padStart(3,'0');
+  cd.h.textContent = String(h).padStart(2,'0');
+  cd.m.textContent = String(m).padStart(2,'0');
+  cd.s.textContent = String(s).padStart(2,'0');
 }
 tick();
-setInterval(tick, 1e3);
+setInterval(tick,1000);
 
-const menuBtn = document.getElementById("menuBtn");
-const menuPanel = document.getElementById("menuPanel");
-function setMenu(open) {
-  menuPanel.classList.toggle("open", open);
-  menuBtn.classList.toggle("open", open);
-  menuBtn.setAttribute("aria-expanded", open);
-  menuBtn.setAttribute("aria-label", open ? "Tutup menu" : "Buka menu");
+/* Mobile menu */
+const menuBtn = document.getElementById('menuBtn');
+const menuPanel = document.getElementById('menuPanel');
+function setMenu(open){
+  menuPanel.classList.toggle('open',open);
+  menuBtn.classList.toggle('open',open);
+  menuBtn.setAttribute('aria-expanded',String(open));
+  menuBtn.setAttribute('aria-label',open?'Tutup menu':'Buka menu');
 }
-menuBtn.addEventListener("click", e => {
+menuBtn.addEventListener('click',e=>{
   e.stopPropagation();
-  setMenu(!menuPanel.classList.contains("open"));
+  setMenu(!menuPanel.classList.contains('open'));
 });
-document.addEventListener("click", e => {
-  if (menuPanel.classList.contains("open") && !menuPanel.contains(e.target)) setMenu(false);
+document.addEventListener('click',e=>{
+  if(menuPanel.classList.contains('open') && !menuPanel.contains(e.target) && e.target!==menuBtn) setMenu(false);
 });
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") setMenu(false);
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape') setMenu(false);
 });
-menuPanel.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+menuPanel.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
 
-const EMAIL = "halo@titikbalik.id";
-const copyBtn = document.getElementById("copyEmail");
-copyBtn.addEventListener("click", function() {
-  const btn = this;
-  const done = ok => {
-    btn.textContent = ok ? "Tersalin ✓" : "Gagal disalin";
-    setTimeout(() => { btn.textContent = "Salin Email"; }, 1800);
+/* Copy official email */
+const EMAIL='halo@titikbalik.id';
+const copyBtn=document.getElementById('copyEmail');
+copyBtn.addEventListener('click',function(){
+  const btn=this;
+  const done=ok=>{
+    btn.textContent=ok?'Tersalin ✓':'Gagal disalin';
+    setTimeout(()=>{btn.textContent='Salin Email'},1800);
   };
-  const fallback = () => {
-    try {
-      const ta = document.createElement("textarea");
-      ta.value = EMAIL;
-      ta.setAttribute("readonly", "");
-      ta.style.position = "fixed";
-      ta.style.top = "-9999px";
+  const fallback=()=>{
+    try{
+      const ta=document.createElement('textarea');
+      ta.value=EMAIL;
+      ta.setAttribute('readonly','');
+      ta.style.position='fixed';
+      ta.style.top='-9999px';
       document.body.appendChild(ta);
       ta.select();
-      const ok = document.execCommand("copy");
+      const ok=document.execCommand('copy');
       document.body.removeChild(ta);
       done(ok);
-    } catch { done(false); }
+    }catch(err){done(false)}
   };
-  if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(EMAIL).then(() => done(true)).catch(fallback);
-  } else {
-    fallback();
-  }
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(EMAIL).then(()=>done(true)).catch(fallback);
+  }else fallback();
 });
 
-document.getElementById("toTop").addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+/* Back to top */
+const toTop=document.getElementById('toTop');
+function updateTopButton(){
+  toTop.classList.toggle('hidden',window.scrollY<420);
+}
+window.addEventListener('scroll',updateTopButton,{passive:true});
+toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+updateTopButton();
+
+/* Image fallback for the original Reza filename and its corrected spelling. */
+document.querySelectorAll('img[data-fallback]').forEach(img=>{
+  img.addEventListener('error',()=>{
+    const fallback=img.dataset.fallback;
+    if(fallback && img.src.split('/').pop()!==fallback){
+      img.src=fallback;
+    }
+  },{once:false});
 });
 </script>
 </body>
