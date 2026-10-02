@@ -9,7 +9,7 @@
 <title>Titik Balik Festival — 30 Januari 2027</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Playfair+Display:ital,wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#100004;
@@ -48,24 +48,36 @@ img{display:block;max-width:100%}
   margin:0 auto;
   position:relative;
   overflow:hidden;
+  overflow:clip;
   background:
     radial-gradient(95% 520px at 50% 260px,rgba(91,7,23,.28),transparent 72%),
     linear-gradient(180deg,#210208 0%,#170207 27%,#100105 59%,#070002 100%);
   box-shadow:0 0 80px rgba(0,0,0,.72);
 }
-/* ===== HEADER ===== */
+/* ===== HEADER (sticky) ===== */
 .site-header{
-  position:relative;
+  position:-webkit-sticky;
+  position:sticky;
+  top:0;
   z-index:50;
   height:76px;
   display:flex;
   align-items:flex-start;
   justify-content:space-between;
   padding:13px 18px 8px;
-  border-bottom:1px solid rgba(215,174,63,.10);
+  border-bottom:1px solid transparent;
+  background:transparent;
+  transition:background .3s ease,border-color .3s ease,box-shadow .3s ease;
 }
-.brand{display:block;width:68px;height:54px}
-.brand img{width:auto;height:54px;object-fit:contain}
+.site-header.scrolled{
+  background:rgba(13,1,5,.9);
+  -webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
+  border-bottom-color:rgba(215,174,63,.14);
+  box-shadow:0 10px 30px rgba(0,0,0,.38);
+}
+.brand{display:block;width:88px;height:56px}
+.brand img{width:auto;height:56px;object-fit:contain}
 .brand-fallback{
   display:none;
   color:var(--gold-light);
@@ -75,7 +87,7 @@ img{display:block;max-width:100%}
   font-weight:700;
 }
 .menu{
-  width:38px;
+  width:40px;
   height:46px;
   display:grid;
   align-content:center;
@@ -84,7 +96,7 @@ img{display:block;max-width:100%}
   padding:8px 0;
   z-index:3;
 }
-.menu span{width:30px;height:3px;border-radius:3px;background:#eee7df;transition:transform .25s ease,opacity .2s ease}
+.menu span{width:32px;height:3px;border-radius:3px;background:#f2ece6;transition:transform .25s ease,opacity .2s ease}
 .menu.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
 .menu.open span:nth-child(2){opacity:0}
 .menu.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
@@ -115,56 +127,40 @@ img{display:block;max-width:100%}
   font-size:14px;
 }
 .menu-panel a:hover{background:rgba(215,174,63,.08);color:var(--gold-pale)}
-.menu-panel .mp-cta{margin-top:6px;justify-content:center;background:linear-gradient(135deg,#f2d875,#c79b34);color:#301c00;font-weight:700}
+.menu-panel .mp-cta{margin-top:6px;justify-content:center;background:linear-gradient(135deg,#f2d875,#c79b34);color:#301c00;font-family:'Poppins',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:1px}
 /* ===== CURTAIN / HERO ===== */
 .curtain{
   position:absolute;
   z-index:0;
   top:0;left:0;right:0;
-  height:330px;
+  height:372px;
   pointer-events:none;
-  overflow:hidden;
-  background:
-    radial-gradient(95% 125% at 50% -30%,rgba(190,35,61,.82) 0%,rgba(117,12,33,.95) 34%,rgba(53,5,21,.96) 65%,rgba(16,1,6,0) 96%);
-  -webkit-mask-image:linear-gradient(#000 58%,transparent 100%);
-  mask-image:linear-gradient(#000 58%,transparent 100%);
 }
-.curtain:before,
-.curtain:after{
-  content:"";
-  position:absolute;
-  left:-10%;right:-10%;
-  height:55px;
-  border-radius:50%;
-  border-top:4px solid rgba(196,38,67,.28);
-  box-shadow:0 -20px 28px rgba(220,50,76,.09),0 17px 28px rgba(0,0,0,.45);
-  transform:rotate(-2deg);
-}
-.curtain:before{top:42px}
-.curtain:after{top:126px;transform:rotate(1.2deg);border-top-width:5px}
+.curtain svg{display:block;width:100%;height:100%}
 .hero{
   position:relative;
   z-index:1;
   text-align:center;
-  padding:70px 20px 94px;
+  padding:46px 20px 96px;
 }
 .presenter{
-  color:#d7b455;
+  color:#dcb558;
+  font-family:'Poppins',sans-serif;
   font-size:12px;
-  font-weight:500;
-  letter-spacing:.30em;
+  font-weight:600;
+  letter-spacing:.3em;
   text-transform:uppercase;
   white-space:nowrap;
 }
 .hero-logo{
-  width:min(300px,82%);
+  width:min(296px,82%);
   height:auto;
-  margin:86px auto 0;
-  filter:drop-shadow(0 10px 22px rgba(0,0,0,.45));
+  margin:60px auto 0;
+  filter:drop-shadow(0 12px 26px rgba(0,0,0,.5));
 }
 .hero-fallback{
   display:none;
-  margin:86px auto 0;
+  margin:60px auto 0;
   color:var(--gold-pale);
   font-family:'Playfair Display',serif;
   font-weight:700;
@@ -172,80 +168,84 @@ img{display:block;max-width:100%}
   line-height:.88;
 }
 .tagline{
-  margin-top:27px;
-  color:#eee4dc;
+  margin-top:30px;
+  color:#f3ebe3;
   font-family:'Playfair Display',serif;
   font-style:italic;
-  font-size:19px;
+  font-size:19.5px;
 }
 .date{
-  margin-top:30px;
-  color:var(--gold-light);
-  font-family:'Playfair Display',serif;
+  margin-top:32px;
+  color:#ecc150;
+  font-family:'Poppins',sans-serif;
   font-size:28px;
   font-weight:700;
-  letter-spacing:.02em;
+  letter-spacing:.5px;
 }
 .venue{
-  margin-top:8px;
-  color:#e5d9d1;
-  font-size:16px;
+  margin-top:9px;
+  color:#f0e7df;
+  font-family:'Poppins',sans-serif;
+  font-weight:500;
+  font-size:15px;
   letter-spacing:2.4px;
 }
 .countdown{
   width:100%;
-  max-width:394px;
-  margin:36px auto 0;
-  padding:22px 22px 17px;
+  max-width:344px;
+  margin:38px auto 0;
+  padding:19px 22px 14px;
   display:flex;
   align-items:flex-start;
   justify-content:space-between;
-  border:1px solid rgba(226,177,88,.34);
+  border:1px solid rgba(226,177,88,.4);
   border-radius:999px;
-  background:linear-gradient(180deg,rgba(117,23,40,.58),rgba(59,7,17,.72));
+  background:linear-gradient(180deg,rgba(122,22,42,.62),rgba(58,7,18,.78));
   box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 14px 30px rgba(0,0,0,.30);
 }
-.unit{min-width:61px;text-align:center}
+.unit{min-width:58px;text-align:center}
 .unit strong{
   display:block;
-  color:var(--gold-light);
-  font-family:'Playfair Display',serif;
-  font-size:34px;
+  color:#eec45a;
+  font-family:'Poppins',sans-serif;
+  font-size:33px;
   line-height:1;
   font-weight:600;
   font-variant-numeric:tabular-nums;
 }
 .unit span{
   display:block;
-  margin-top:7px;
-  color:#d1b997;
+  margin-top:6px;
+  color:#c4ab9d;
+  font-family:'Poppins',sans-serif;
+  font-weight:500;
   font-size:10px;
   letter-spacing:2px;
 }
-.sep{display:flex;flex-direction:column;gap:7px;margin-top:31px}
-.sep i{width:4px;height:4px;border-radius:50%;background:#b98931}
+.sep{display:flex;flex-direction:column;gap:7px;margin-top:29px}
+.sep i{width:4px;height:4px;border-radius:50%;background:#c79a35}
 .cta{
   display:inline-flex;
   align-items:center;
   justify-content:center;
   gap:9px;
-  margin-top:43px;
-  min-width:275px;
-  padding:16px 30px;
+  margin-top:40px;
+  min-width:264px;
+  padding:15px 32px;
   border-radius:999px;
   background:linear-gradient(100deg,#e2b62d 0%,#f7dd84 55%,#dfb83e 100%);
   color:#321c00;
-  font-family:'Playfair Display',serif;
+  font-family:'Poppins',sans-serif;
   font-weight:700;
   font-size:15px;
-  letter-spacing:1.2px;
+  letter-spacing:1.4px;
   box-shadow:0 10px 30px rgba(0,0,0,.40),0 4px 18px rgba(215,174,63,.20);
   transition:transform .2s ease,filter .2s ease;
 }
 .cta:hover{transform:translateY(-2px);filter:brightness(1.04)}
 .cta:active{transform:translateY(0)}
 /* ===== GENERIC SECTIONS ===== */
-section{padding:62px 20px}
+section{padding:62px 20px;scroll-margin-top:84px}
 .section-title{
   color:var(--gold-light);
   text-align:center;
@@ -344,7 +344,7 @@ section{padding:62px 20px}
   min-height:25px;
   padding:5px 12px;
   border-radius:999px;
-  font-family:Arial,sans-serif;
+  font-family:'Poppins',sans-serif;
   font-size:9px;
   font-weight:700;
   letter-spacing:.25px;
@@ -364,25 +364,26 @@ section{padding:62px 20px}
 /* ===== TICKETS ===== */
 #tiket{padding-top:63px;padding-bottom:66px}
 #tiket .section-subtitle{max-width:360px;margin-top:20px;font-size:17px;line-height:1.72}
-.ticket-grid{margin-top:40px;display:grid;gap:30px}
+.ticket-grid{margin-top:36px;display:grid;gap:36px}
 .ticket-card{
-  padding:32px 30px 34px;
-  border:1px solid rgba(215,174,63,.30);
-  border-radius:18px;
-  background:linear-gradient(160deg,rgba(52,9,17,.85),rgba(20,2,7,.96));
-  box-shadow:0 18px 40px rgba(0,0,0,.35);
+  padding:34px 28px 36px;
+  border:1px solid rgba(220,175,70,.22);
+  border-radius:24px;
+  background:linear-gradient(170deg,#260a10 0%,#1a0509 52%,#13030a 100%);
+  box-shadow:0 22px 48px rgba(0,0,0,.42);
 }
 .ticket-card h3{
-  color:#e5b83c;
-  font-family:'Playfair Display',serif;
-  font-size:32px;
+  color:#e9b94c;
+  font-family:'Poppins',sans-serif;
+  font-size:31px;
   line-height:1.18;
   font-weight:700;
+  letter-spacing:.2px;
 }
 .ticket-card p{
-  margin-top:16px;
-  color:#a89d9f;
-  font-size:16px;
+  margin-top:18px;
+  color:#a5969e;
+  font-size:17.5px;
   line-height:1.62;
 }
 .ticket-card ul{
@@ -390,23 +391,25 @@ section{padding:62px 20px}
   margin:26px 0 34px;
   padding:0;
   display:grid;
-  gap:10px;
+  gap:16px;
 }
 .ticket-card li{
   position:relative;
   padding-left:30px;
-  color:#efe6df;
-  font-size:16px;
-  line-height:1.45;
+  color:#f3ebe4;
+  font-family:'Poppins',sans-serif;
+  font-weight:400;
+  font-size:16.5px;
+  line-height:1.5;
 }
 .ticket-card li::before{
   content:"";
   position:absolute;
-  left:3px;
-  top:.48em;
+  left:2px;
+  top:.42em;
   width:9px;height:9px;
   border-radius:50%;
-  background:#d7ae3f;
+  background:#d9a83f;
 }
 .ticket-card .ticket-cta{
   display:flex;
@@ -414,16 +417,16 @@ section{padding:62px 20px}
   justify-content:center;
   gap:12px;
   width:100%;
-  min-height:56px;
+  min-height:58px;
   padding:15px 18px;
   border-radius:999px;
-  background:linear-gradient(180deg,#f3d674 0%,#e3bf4a 55%,#d2a232 100%);
+  background:linear-gradient(180deg,#f8df8a 0%,#edc966 52%,#d8a83b 100%);
   color:#33200a;
-  font-family:'Playfair Display',serif;
-  font-size:14.5px;
+  font-family:'Poppins',sans-serif;
+  font-size:17px;
   font-weight:700;
-  letter-spacing:1.6px;
-  box-shadow:0 10px 26px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.42);
+  letter-spacing:2px;
+  box-shadow:0 8px 26px rgba(0,0,0,.42),0 0 34px rgba(233,187,80,.30),inset 0 1px 0 rgba(255,255,255,.55);
   transition:transform .2s ease,filter .2s ease;
 }
 .ticket-card .ticket-cta:hover{transform:translateY(-2px);filter:brightness(1.04)}
@@ -474,7 +477,7 @@ footer p{color:#807475;font-size:9px;line-height:1.85}
   margin-top:26px;
 }
 .f-partner .fp-label{
-  font-family:Arial,sans-serif;
+  font-family:'Poppins',sans-serif;
   font-size:9.5px;
   font-weight:700;
   letter-spacing:2px;
@@ -484,7 +487,7 @@ footer p{color:#807475;font-size:9px;line-height:1.85}
   display:inline-flex;
   align-items:center;
   gap:6px;
-  font-family:Arial,sans-serif;
+  font-family:'Poppins',sans-serif;
   font-size:19px;
   font-weight:700;
   letter-spacing:.4px;
@@ -496,7 +499,7 @@ footer p{color:#807475;font-size:9px;line-height:1.85}
   z-index:60;
   right:max(14px,calc(50% - 201px));
   bottom:22px;
-  width:43px;height:43px;
+  width:46px;height:46px;
   display:grid;place-items:center;
   border-radius:50%;
   color:#3a2200;
@@ -512,9 +515,10 @@ footer p{color:#807475;font-size:9px;line-height:1.85}
   .unit{min-width:47px}
   .unit strong{font-size:29px}
   .sep{margin-top:27px}
-  .cta{min-width:245px}
+  .cta{min-width:240px}
   section{padding-left:16px;padding-right:16px}
-  .ticket-card{padding:28px 22px 30px}
+  .ticket-card{padding:30px 22px 32px}
+  .ticket-card h3{font-size:27px}
 }
 @media(min-width:700px){
   body{padding:24px 0}
@@ -530,11 +534,63 @@ footer p{color:#807475;font-size:9px;line-height:1.85}
 <h1 class="sr-only">Titik Balik Festival — 30 Januari 2027, Graha Cakrawala Universitas Negeri Malang</h1>
 
 <main class="page" id="top">
-  <div class="curtain" aria-hidden="true"></div>
 
-  <header class="site-header">
+  <!-- Tirai panggung -->
+  <div class="curtain" aria-hidden="true">
+    <svg viewBox="0 0 430 372" preserveAspectRatio="none" focusable="false">
+      <defs>
+        <linearGradient id="cb" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#8f1737"/>
+          <stop offset=".36" stop-color="#6d0f2b"/>
+          <stop offset=".7" stop-color="#3a0619"/>
+          <stop offset="1" stop-color="#12010a" stop-opacity="0"/>
+        </linearGradient>
+        <radialGradient id="cgl" cx=".5" cy=".05" r=".9">
+          <stop offset="0" stop-color="#e2496c" stop-opacity=".8"/>
+          <stop offset=".45" stop-color="#a81f44" stop-opacity=".32"/>
+          <stop offset="1" stop-color="#a81f44" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="cv" cx=".5" cy=".25" r=".95">
+          <stop offset=".55" stop-color="#000" stop-opacity="0"/>
+          <stop offset="1" stop-color="#000" stop-opacity=".5"/>
+        </radialGradient>
+        <linearGradient id="ch" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ff92a6" stop-opacity=".7"/>
+          <stop offset="1" stop-color="#ff92a6" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="cs" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#16010a" stop-opacity=".9"/>
+          <stop offset="1" stop-color="#16010a" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="cf" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fff"/>
+          <stop offset=".58" stop-color="#fff" stop-opacity=".8"/>
+          <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <mask id="cm"><rect width="430" height="372" fill="url(#cf)"/></mask>
+        <filter id="cbl" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur stdDeviation="6"/></filter>
+      </defs>
+      <g mask="url(#cm)">
+        <rect width="430" height="372" fill="url(#cb)"/>
+        <rect width="430" height="372" fill="url(#cgl)"/>
+        <!-- lipatan tirai atas -->
+        <path d="M-20 -20 H450 V30 C 384 78 318 102 244 78 C 168 52 74 62 -20 112 Z" fill="url(#cs)"/>
+        <path d="M-20 112 C 74 62 168 52 244 78 C 318 102 384 78 450 30" fill="none" stroke="#1a020c" stroke-width="24" opacity=".35" filter="url(#cbl)" transform="translate(0 16)"/>
+        <path d="M-20 112 C 74 62 168 52 244 78 C 318 102 384 78 450 30" fill="none" stroke="url(#ch)" stroke-width="6" opacity=".9"/>
+        <!-- gelombang 2 -->
+        <path d="M-20 186 C 78 142 180 132 266 158 C 340 180 400 150 450 114" fill="none" stroke="#1a020c" stroke-width="22" opacity=".3" filter="url(#cbl)" transform="translate(0 15)"/>
+        <path d="M-20 186 C 78 142 180 132 266 158 C 340 180 400 150 450 114" fill="none" stroke="url(#ch)" stroke-width="5" opacity=".6"/>
+        <!-- gelombang 3 -->
+        <path d="M-20 258 C 86 220 188 212 278 236 C 350 255 406 230 450 198" fill="none" stroke="#1a020c" stroke-width="20" opacity=".24" filter="url(#cbl)" transform="translate(0 14)"/>
+        <path d="M-20 258 C 86 220 188 212 278 236 C 350 255 406 230 450 198" fill="none" stroke="url(#ch)" stroke-width="4" opacity=".42"/>
+        <rect width="430" height="372" fill="url(#cv)"/>
+      </g>
+    </svg>
+  </div>
+
+  <header class="site-header" id="siteHeader">
     <a class="brand" href="#beranda" aria-label="Titik Balik — Beranda">
-      <img src="logo.png" alt="Titik Balik" width="68" height="54" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <img src="logo.png" alt="Titik Balik" width="88" height="56" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <span class="brand-fallback">Titik<br>Balik</span>
     </a>
     <button class="menu" type="button" id="menuBtn" aria-label="Buka menu" aria-controls="menuPanel" aria-expanded="false">
@@ -546,13 +602,13 @@ footer p{color:#807475;font-size:9px;line-height:1.85}
       <a href="#tautan">Tautan Resmi</a>
       <a href="#tiket">Kategori Tiket</a>
       <a href="#lokasi">Lokasi</a>
-      <a class="mp-cta" href="https://artatixmyid.github.io/titikbalikfest/" target="_blank" rel="noopener">BELI TIKET DISINI</a>
+      <a class="mp-cta" href="#tiket">BELI TIKET DISINI</a>
     </nav>
   </header>
 
   <section class="hero" id="beranda">
     <p class="presenter">JC ENTERTAINMENT X LUXAR CREATIVE</p>
-    <img class="hero-logo" src="logo.png" alt="Titik Balik" width="300" height="240" fetchpriority="high" onerror="this.style.display='none';document.getElementById('heroFallback').style.display='block'">
+    <img class="hero-logo" src="logo.png" alt="Titik Balik" width="296" height="240" fetchpriority="high" onerror="this.style.display='none';document.getElementById('heroFallback').style.display='block'">
     <div class="hero-fallback" id="heroFallback">TITIK<br>BALIK</div>
     <p class="tagline">Dari Memori, Turun Ke Hati</p>
     <p class="date">30 JANUARI 2027</p>
@@ -568,10 +624,8 @@ footer p{color:#807475;font-size:9px;line-height:1.85}
       <div class="unit"><strong id="cd-s">00</strong><span>DETIK</span></div>
     </div>
 
-    <a class="cta" href="https://artatixmyid.github.io/titikbalikfest/" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.95 5.6c.5-1.05 1.6-1.05 2.1 0l6.1 12.3c.5 1.05-.15 2.1-1.05 2.1H5.9c-.9 0-1.55-1.05-1.05-2.1l6.1-12.3Z"/><path d="M7 15.7h10"/></svg>
-      BELI TIKET DISINI
-    </a>
+    <!-- Turun ke bagian Kategori Tiket -->
+    <a class="cta" href="#tiket">BELI TIKET DISINI</a>
   </section>
 
   <section id="guest-stars">
@@ -651,14 +705,14 @@ footer p{color:#807475;font-size:9px;line-height:1.85}
     <div class="ticket-grid">
       <article class="ticket-card">
         <h3>VIP Standing &amp;<br>Festival Tribun</h3>
-        <p>Nikmati konser dengan energi maksimal di area festival dan tribun untuk bernyanyi bersama.</p>
+        <p>Pengalaman konser dengan energi maksimal di area festival dan tribun untuk bernyanyi bersama.</p>
         <ul>
           <li>Akses area VIP Standing</li>
           <li>Akses area Festival Tribun</li>
           <li>Spot strategis menikmati visual panggung</li>
         </ul>
         <a class="ticket-cta" href="https://artatixmyid.github.io/titikbalikfest/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.95 5.6c.5-1.05 1.6-1.05 2.1 0l6.1 12.3c.5 1.05-.15 2.1-1.05 2.1H5.9c-.9 0-1.55-1.05-1.05-2.1l6.1-12.3Z"/><path d="M7 15.7h10"/></svg>
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.6 18.4 19H5.6Z"/></svg>
           BELI TIKET
         </a>
       </article>
@@ -674,7 +728,7 @@ footer p{color:#807475;font-size:9px;line-height:1.85}
           <li>VVIP Lounge eksklusif</li>
         </ul>
         <a class="ticket-cta" href="https://artatixmyid.github.io/titikbalikfest/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.95 5.6c.5-1.05 1.6-1.05 2.1 0l6.1 12.3c.5 1.05-.15 2.1-1.05 2.1H5.9c-.9 0-1.55-1.05-1.05-2.1l6.1-12.3Z"/><path d="M7 15.7h10"/></svg>
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.6 18.4 19H5.6Z"/></svg>
           BELI TIKET
         </a>
       </article>
@@ -696,7 +750,7 @@ footer p{color:#807475;font-size:9px;line-height:1.85}
     <p>Diselenggarakan oleh JC Entertainment x Luxar Creative</p>
     <a class="f-partner" href="https://artatixmyid.github.io/titikbalikfest/" target="_blank" rel="noopener" aria-label="Tiket tersedia di Artatix">
       <span class="fp-label">TICKET AVAILABLE AT</span>
-      <span class="fp-brand"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.95 5.6c.5-1.05 1.6-1.05 2.1 0l6.1 12.3c.5 1.05-.15 2.1-1.05 2.1H5.9c-.9 0-1.55-1.05-1.05-2.1l6.1-12.3Z"/><path d="M7 15.7h10"/></svg>Artatix</span>
+      <span class="fp-brand"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.6 18.4 19H5.6Z"/></svg>Artatix</span>
     </a>
   </footer>
 </main>
@@ -729,6 +783,14 @@ function tick(){
 }
 tick();
 setInterval(tick,1000);
+
+/* Sticky header: transparan di atas, gelap saat discroll */
+const siteHeader = document.getElementById('siteHeader');
+function headerState(){
+  siteHeader.classList.toggle('scrolled', window.scrollY > 30);
+}
+window.addEventListener('scroll', headerState, {passive:true});
+headerState();
 
 /* Mobile menu */
 const menuBtn = document.getElementById('menuBtn');
